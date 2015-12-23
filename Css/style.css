@@ -1,0 +1,89 @@
+*{
+	background-color: #efeff4;
+}
+.clock{
+	background-image: url('../img/clock_day_background.png');
+	height: 248px;
+	margin: 0 auto;
+	width: 248px;
+}
+.content{
+	margin: 0 auto;
+	width: 250px;
+}
+.content h1{
+	text-align: center;
+}
+.content>div{
+	display: inline-block;
+	vertical-align: top;
+}
+.center1{
+	border:1px solid #000;
+	background-color: #000;
+	border-radius: 6px;
+	height: 8px;
+	margin: 0 auto;
+	position: relative;
+	top:-76px;
+	width: 8px;
+}
+.center2{
+	border:1px solid #ff3c31;
+	background-color: #ff3c31;
+	border-radius: 4px;
+	height: 3px;
+	margin: 0 auto;
+	position: relative;
+	top:1px;
+	width: 3px;
+}
+.horario{
+	border: 1px solid #000;
+	border-radius: 4px 4px 0 0;
+	background-color: #000;
+	height: 45px;
+	position: relative;
+	margin: 0 auto;
+	top:-70px;
+	width: 2px;
+	z-index: 0;
+	-webkit-transform-origin:1px 45px;
+   	-moz-transform-origin:1px 45px;
+    -ms-transform-origin:1px 45px;
+    -o-transform-origin:1px 45px;
+    transform-origin:1px 45px;
+}
+.minutero{
+	border: 1px solid #000;
+	border-radius: 4px 4px 0 0;
+	background-color: #000;
+	height: 70px;
+	position: relative;
+	margin: 0 auto;
+	top:-23px;
+	width: 2px;
+	z-index: 0;
+	-webkit-transform-origin:1px 70px;
+   	-moz-transform-origin:1px 70px;
+    -ms-transform-origin:1px 70px;
+    -o-transform-origin:1px 70px;
+    transform-origin:1px 70px;
+}
+.segundero{
+	border: 1px solid #ff3c31;
+	border-radius: 2px 2px 0 0;
+	background-color: #ff3c31;
+	height: 80px;
+	left:0px;
+	position: relative;
+	top:49px;
+	margin: 0 auto;
+	width: 0px;
+	z-index: 3;
+	-webkit-transform-origin:1px 80px;
+   	-moz-transform-origin:1px 80px;
+    -ms-transform-origin:1px 80px;
+    -o-transform-origin:1px 80px;
+    transform-origin:1px 80px;
+}
