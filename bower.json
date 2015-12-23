@@ -1,7 +1,6 @@
 {
   "name": "clock-js",
   "version": "1.0.0",
-  "componentsDirectory": "Script/lib",
   "dependencies": {
     "requirejs": "~2.1.22",
     "angular": "~1.4.8",

@@ -16,7 +16,7 @@
          .directive("linkSeconds", secondsDirective)
          .directive("linkMinutes", minutesDirective)
          .directive("linkHours", hoursDirective)
-         .factory("clockService",clockService)
+         .factory("clockService",clockService);
     });
 
 })();

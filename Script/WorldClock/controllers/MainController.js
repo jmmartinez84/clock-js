@@ -1,4 +1,4 @@
-define(function () {
+jdefine(function () {
     return ["$scope", function ($scope) {
         $scope.$on('clock.init',function(scope, newClock){
             if(!$scope.clocks){

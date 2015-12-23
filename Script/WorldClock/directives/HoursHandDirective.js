@@ -1,4 +1,4 @@
-define(function () {
+jdefine(function () {
     var HoursHand = function () {
         // Return the directive configuration.
         return ({

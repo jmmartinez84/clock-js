@@ -18,9 +18,13 @@ define(function () {
 	        minutesHand.value = actDate.getMinutes()+secondsHand.value/60;
 	        hoursHand.value = actDate.getHours()+minutesHand.value/60;
 	        if(window.requestAnimationFrame){
-	        	clockInterval = window.requestAnimationFrame(function(){loop(clock)});
+	        	clockInterval = window.requestAnimationFrame(function(){
+	        		loop(clock);
+	        	});
 	        }else{
-	        	window.setTimeout(function(){loop(clock)},500);
+	        	window.setTimeout(function(){
+	        		loop(clock);
+	        	},500);
 	        }
 	    };
 	    var draw = function(clock){
@@ -48,7 +52,7 @@ define(function () {
 	    	else if(typeof(hand.element.style.MozTransform)!="undefined"){
 	    		hand.element.style.MozTransform = "rotate("+currentDeg+"deg)";
 	    	}
-	    }
+	    };
 		var loop = function(clock){
 			update(clock);
 			draw(clock);
@@ -56,17 +60,21 @@ define(function () {
 		var initialize = function(clock){
 			if(window.requestAnimationFrame){
 				clock.animation = clock.animation && true;
-				clockInterval = window.requestAnimationFrame(function(){loop(clock)});
+				clockInterval = window.requestAnimationFrame(function(){
+					loop(clock);
+				});
 			}else{
 				clock.animation = clock.animation && false;
-				window.setTimeout(function(){loop(clock)},500)
+				window.setTimeout(function(){
+					loop(clock);
+				},500);
 			}
 		};
 		return{
 			Initialize:function(clock){
 				initialize(clock);
 			}
-		}
+		};
 	};
     return [ClockService];
 });

@@ -1,4 +1,4 @@
-define(function () {
+jdefine(function () {
     var ClockController = function ($scope, clockService) {
     	$scope.clock = {
             'hands':{
