@@ -1,4 +1,4 @@
-jdefine(function () {
+define(function () {
     var SecondsHand = function () {
         // Return the directive configuration.
         return ({

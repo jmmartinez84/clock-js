@@ -1,5 +1,5 @@
 define(function () {
-	var ClockService = function(){
+	var ClockService = function($window, $timeout){
 		var update = function(clock){
 			var secondsHand = clock.hands.secondsHand;
 			var minutesHand = clock.hands.minutesHand;
@@ -58,23 +58,21 @@ define(function () {
 			draw(clock);
 		};
 		var initialize = function(clock){
-			if(window.requestAnimationFrame){
+			if($window.requestAnimationFrame){
 				clock.animation = clock.animation && true;
-				clockInterval = window.requestAnimationFrame(function(){
+				clockInterval = $window.requestAnimationFrame(function(){
 					loop(clock);
 				});
 			}else{
 				clock.animation = clock.animation && false;
-				window.setTimeout(function(){
+				$timeout(function(){
 					loop(clock);
 				},500);
 			}
 		};
 		return{
-			Initialize:function(clock){
-				initialize(clock);
-			}
+			Initialize:initialize
 		};
 	};
-    return [ClockService];
+    return ['$window','$timeout', ClockService];
 });
