@@ -22,9 +22,7 @@ require.config({
         "mainCtrl":"Script/WorldClock/controllers/MainController",
         "clockCtrl":"Script/WorldClock/controllers/ClockController",
         "clockDir": "Script/WorldClock/directives/ClockDirective",
-        "secHandDir":"Script/WorldClock/directives/SecondsHandDirective",
-        "minHandDir":"Script/WorldClock/directives/MinutesHandDirective",
-        "hoursHandDir":"Script/WorldClock/directives/HoursHandDirective",
+        "linkHandDir":"Script/WorldClock/directives/linkHandDirective",
         "clockServ":"Script/WorldClock/services/ClockService",
         "app": "Script/WorldClock/app"
     },
