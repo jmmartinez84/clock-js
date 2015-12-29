@@ -1,22 +1,22 @@
 
 define(['app'], function(App, $, _) {
     describe('ClockController', function() {
-        var scope, controller;
-
         // Initialization of the AngularJS application before each test case
         beforeEach(module('worldClock'));
 
-        // Injection of dependencies, $http will be mocked with $httpBackend
-        beforeEach(inject(function($rootScope, $controller) {
-            scope = $rootScope;
-            controller = $controller;
-          
-        }));
+        var $controller;
 
-        it('should pass test', function() {
+          beforeEach(inject(function(_$controller_){
+            $controller = _$controller_;
+          }));
 
-            expect(1).toEqual(1);
-
+        it('should have a "clock" object', function() {
+            var $scope = {
+                "$watch":function(){},
+            };
+            spyOn($scope, '$watch');
+            var controller = $controller('clock', { $scope: $scope });
+            expect($scope.clock).toEqual(jasmine.any(Object));
         });
 
     });

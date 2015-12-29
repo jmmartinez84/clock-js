@@ -4,9 +4,7 @@ requirejs({
         "mainCtrl":"WorldClock/controllers/MainController",
         "clockCtrl":"WorldClock/controllers/ClockController",
         "clockDir": "WorldClock/directives/ClockDirective",
-        "secHandDir":"WorldClock/directives/SecondsHandDirective",
-        "minHandDir":"WorldClock/directives/MinutesHandDirective",
-        "hoursHandDir":"WorldClock/directives/HoursHandDirective",
+        "linkHandDir":"WorldClock/directives/linkHandDirective",
         "clockServ":"WorldClock/services/ClockService",
         "app": "WorldClock/app"
     }

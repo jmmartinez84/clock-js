@@ -7,7 +7,7 @@
         'minHandDir',
         'hoursHandDir',
         'clockServ'
-    ], function (mainCtrl , clockCtrl, clockDirective, secondsDirective, minutesDirective, hoursDirective, clockService) {
+    ], function (mainCtrl , clockCtrl, clockDirective, secondsDirective, minutesDirective, linkHand, clockService) {
         angular
          .module("worldClock", [])
          .controller("worldclock", mainCtrl)
@@ -15,7 +15,7 @@
          .directive("showClock", clockDirective)
          .directive("linkSeconds", secondsDirective)
          .directive("linkMinutes", minutesDirective)
-         .directive("linkHours", hoursDirective)
+         .directive("linkHand", linkHand)
          .factory("clockService",clockService);
     });
 
