@@ -4,20 +4,16 @@ define(['app'], function() {
         // Initialization of the AngularJS application before each test case
         beforeEach(module('worldClock'));
 
-        var $controller;
+        var $controller,$scope;
 
-          beforeEach(inject(function(_$controller_){
+        beforeEach(inject(function($rootScope, _$controller_){
+            $scope=$rootScope.$new();
             $controller = _$controller_;
-          }));
+        }));
 
         it('should have a "clock" object', function() {
-            var $scope = {
-                "$watch":function(){},
-            };
-            spyOn($scope, '$watch');
             var controller = $controller('clock', { $scope: $scope });
             expect($scope.clock).toEqual(jasmine.any(Object));
         });
-
     });
 });
