@@ -1,9 +1,9 @@
 define(function () {
 	var ClockService = function($window, $timeout){
 		var update = function(clock){
-			var secondsHand = clock.hands.secondsHand;
-			var minutesHand = clock.hands.minutesHand;
-			var hoursHand = clock.hands.hoursHand;
+			var secondsHand = clock.secondsHand;
+			var minutesHand = clock.minutesHand;
+			var hoursHand = clock.hoursHand;
 	        var actDate = new Date();
 	        /*Offset*/
 	        actDate.setSeconds(actDate.getSeconds()+secondsHand.offset);
@@ -28,9 +28,9 @@ define(function () {
 	        }
 	    };
 	    var draw = function(clock){
-	    	var secondsHand = clock.hands.secondsHand;
-			var minutesHand = clock.hands.minutesHand;
-			var hoursHand = clock.hands.hoursHand;
+	    	var secondsHand = clock.secondsHand;
+			var minutesHand = clock.minutesHand;
+			var hoursHand = clock.hoursHand;
 	    	/*segundero*/
 	    	drawElement(secondsHand);
 	    	/*minutero*/

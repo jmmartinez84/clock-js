@@ -1,5 +1,5 @@
 
-define(['app'], function(App, $, _) {
+define(['app'], function() {
     describe('ClockController', function() {
         // Initialization of the AngularJS application before each test case
         beforeEach(module('worldClock'));

@@ -24,6 +24,7 @@ require.config({
         "clockDir": "Script/WorldClock/directives/ClockDirective",
         "linkHandDir":"Script/WorldClock/directives/linkHandDirective",
         "clockHand":"Script/WorldClock/factories/ClockHand",
+        "clockFactory":"Script/WorldClock/factories/Clock",
         "clockServ":"Script/WorldClock/services/ClockService",
         "app": "Script/WorldClock/app"
     },
