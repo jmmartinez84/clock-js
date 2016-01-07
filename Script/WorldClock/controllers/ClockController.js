@@ -1,28 +1,17 @@
 define(function () {
-    var ClockController = function ($scope, clockService) {
-    	$scope.clock = {
+    var ClockController = function ($scope, clockHandFactory, clockService) {
+        var secondsHand = new clockHandFactory(6);
+        var minutesHand = new clockHandFactory(6);
+        var hoursHand = new clockHandFactory(30);
+        hoursHand.offset = -2;
+        $scope.clock = {
             'hands':{
-                'secondsHand':{
-                    'value':0,
-                    'offset':0,
-                    'type':6,
-                    'element':null
-                },
-                'minutesHand':{
-                    'value':0,
-                    'offset':0,
-                    'type':6,
-                    'element':null
-                },
-                'hoursHand':{
-                    'value':0,
-                    'offset':0,
-                    'type':30,
-                    'element':null
-                }
+                'secondsHand':secondsHand,
+                'minutesHand':minutesHand,
+                'hoursHand':hoursHand
             },
             'animation':true
-    	}
+        };
         $scope.valuesWatch = $scope.$watch('clock', function() {
             var hands = $scope.clock.hands;
             if(hands.secondsHand.element && hands.minutesHand.element && hands.hoursHand.element){
@@ -34,5 +23,5 @@ define(function () {
 
 
     };
-    return ["$scope", "clockService", ClockController];
+    return ["$scope", "clockHandFactory", "clockService", ClockController];
 });

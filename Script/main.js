@@ -5,6 +5,7 @@ requirejs({
         "clockCtrl":"WorldClock/controllers/ClockController",
         "clockDir": "WorldClock/directives/ClockDirective",
         "linkHandDir":"WorldClock/directives/linkHandDirective",
+        "clockHand":"WorldClock/factories/ClockHand",
         "clockServ":"WorldClock/services/ClockService",
         "app": "WorldClock/app"
     }

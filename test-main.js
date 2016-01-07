@@ -23,6 +23,7 @@ require.config({
         "clockCtrl":"Script/WorldClock/controllers/ClockController",
         "clockDir": "Script/WorldClock/directives/ClockDirective",
         "linkHandDir":"Script/WorldClock/directives/linkHandDirective",
+        "clockHand":"Script/WorldClock/factories/ClockHand",
         "clockServ":"Script/WorldClock/services/ClockService",
         "app": "Script/WorldClock/app"
     },
