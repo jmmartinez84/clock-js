@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for WorldClock\services\ClockService.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">WorldClock/services/</a> ClockService.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.18% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>9/50</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">define(function () {
+	var ClockService = function($window, $timeout){
+		var update = <span class="fstat-no" title="function not covered" >function(clock){</span>
+<span class="cstat-no" title="statement not covered" >			var secondsHand = clock.secondsHand;</span>
+<span class="cstat-no" title="statement not covered" >			var minutesHand = clock.minutesHand;</span>
+<span class="cstat-no" title="statement not covered" >			var hoursHand = clock.hoursHand;</span>
+<span class="cstat-no" title="statement not covered" >	        var actDate = new Date();</span>
+	        /*Offset*/
+<span class="cstat-no" title="statement not covered" >	        actDate.setSeconds(actDate.getSeconds()+secondsHand.offset);</span>
+<span class="cstat-no" title="statement not covered" >	        actDate.setMinutes(actDate.getMinutes()+minutesHand.offset);</span>
+<span class="cstat-no" title="statement not covered" >	        actDate.setHours(actDate.getHours()+hoursHand.offset);</span>
+	        /*offset*/
+<span class="cstat-no" title="statement not covered" >	        if(clock.animation){</span>
+<span class="cstat-no" title="statement not covered" >	        	secondsHand.value = actDate.getSeconds()+actDate.getMilliseconds()/1000;</span>
+	        }else{
+<span class="cstat-no" title="statement not covered" >	        	secondsHand.value = actDate.getSeconds();</span>
+	        }
+<span class="cstat-no" title="statement not covered" >	        minutesHand.value = actDate.getMinutes()+secondsHand.value/60;</span>
+<span class="cstat-no" title="statement not covered" >	        hoursHand.value = actDate.getHours()+minutesHand.value/60;</span>
+<span class="cstat-no" title="statement not covered" >	        if(window.requestAnimationFrame){</span>
+<span class="cstat-no" title="statement not covered" >	        	clockInterval = window.requestAnimationFrame(<span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >	        		loop(clock);</span>
+	        	});
+	        }else{
+<span class="cstat-no" title="statement not covered" >	        	window.setTimeout(<span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >	        		loop(clock);</span>
+	        	},500);
+	        }
+	    };
+	    var draw = <span class="fstat-no" title="function not covered" >function(clock){</span>
+<span class="cstat-no" title="statement not covered" >	    	var secondsHand = clock.secondsHand;</span>
+<span class="cstat-no" title="statement not covered" >			var minutesHand = clock.minutesHand;</span>
+<span class="cstat-no" title="statement not covered" >			var hoursHand = clock.hoursHand;</span>
+	    	/*segundero*/
+<span class="cstat-no" title="statement not covered" >	    	drawElement(secondsHand);</span>
+	    	/*minutero*/
+<span class="cstat-no" title="statement not covered" >	    	drawElement(minutesHand);</span>
+	    	/*horario */
+<span class="cstat-no" title="statement not covered" >	    	drawElement(hoursHand);</span>
+&nbsp;
+&nbsp;
+	    };
+	    var drawElement = <span class="fstat-no" title="function not covered" >function(hand){</span>
+<span class="cstat-no" title="statement not covered" >	    	var currentDeg = hand.value * hand.type;</span>
+<span class="cstat-no" title="statement not covered" >	    	if(typeof(hand.element.style.transform)!="undefined"){</span>
+<span class="cstat-no" title="statement not covered" >	    		hand.element.style.transform = "rotate("+currentDeg+"deg)";</span>
+	    	}else <span class="cstat-no" title="statement not covered" >if(typeof(hand.element.style.webkitTransform)!="undefined"){</span>
+<span class="cstat-no" title="statement not covered" >	    		hand.element.style.webkitTransform = "rotate("+currentDeg+"deg)";</span>
+	    	}else <span class="cstat-no" title="statement not covered" >if(typeof(hand.element.style.msTransform)!="undefined"){</span>
+<span class="cstat-no" title="statement not covered" >	    		hand.element.style.msTransform = "rotate("+currentDeg+"deg)";</span>
+	    	}
+	    	else <span class="cstat-no" title="statement not covered" >if(typeof(hand.element.style.MozTransform)!="undefined"){</span>
+<span class="cstat-no" title="statement not covered" >	    		hand.element.style.MozTransform = "rotate("+currentDeg+"deg)";</span>
+	    	}
+	    };
+		var loop = <span class="fstat-no" title="function not covered" >function(clock){</span>
+<span class="cstat-no" title="statement not covered" >			update(clock);</span>
+<span class="cstat-no" title="statement not covered" >			draw(clock);</span>
+		};
+		var initialize = <span class="fstat-no" title="function not covered" >function(clock){</span>
+<span class="cstat-no" title="statement not covered" >			if($window.requestAnimationFrame){</span>
+<span class="cstat-no" title="statement not covered" >				clock.animation = clock.animation &amp;&amp; true;</span>
+<span class="cstat-no" title="statement not covered" >				clockInterval = $window.requestAnimationFrame(<span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >					loop(clock);</span>
+				});
+			}else{
+<span class="cstat-no" title="statement not covered" >				clock.animation = clock.animation &amp;&amp; false;</span>
+<span class="cstat-no" title="statement not covered" >				$timeout(<span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >					loop(clock);</span>
+				},500);
+			}
+		};
+		return{
+			Initialize:initialize
+		};
+	};
+    return ['$window','$timeout', ClockService];
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 08 2016 11:00:42 GMT+0100 (Hora estándar romance)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
