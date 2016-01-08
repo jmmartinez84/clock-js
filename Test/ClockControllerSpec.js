@@ -24,7 +24,7 @@ define(['app'], function() {
             });
         });
         
-        beforeEach(inject(function($rootScope, _$controller_, clockFactory, clockService){
+        beforeEach(inject(function($rootScope, _$controller_, clockService){
             $scope=$rootScope.$new();
             $controller = _$controller_;
             spyOn(clockService,'Initialize');
