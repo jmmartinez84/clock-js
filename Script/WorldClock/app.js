@@ -6,7 +6,7 @@
         'clockHand',
         'clockFactory',
         'linkHandDir',
-        'clockServ'
+        'clockService'
     ], function (mainCtrl , clockCtrl, clockDirective, clockHandFactory, clockFactory, linkHandDir, clockService) {
         angular
          .module("worldClock", [])

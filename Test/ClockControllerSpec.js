@@ -27,13 +27,13 @@ define(['app'], function() {
         beforeEach(inject(function($rootScope, _$controller_, clockService){
             $scope=$rootScope.$new();
             $controller = _$controller_;
-            spyOn(clockService,'Initialize');
-
+            spyOn(clockService,'loop');
         }));
         beforeEach(function() {
             var controller = $controller('clock', { $scope: $scope });
         });
         it('should have a "clock" object', function() {
+            spyOn($scope,'run');
             expect($scope.clock).toEqual(jasmine.any(Object));
         });
         describe('Clock initialization', function() {

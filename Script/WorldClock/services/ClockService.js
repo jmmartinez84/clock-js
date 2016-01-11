@@ -1,6 +1,33 @@
 define(function () {
 	var ClockService = function($window, $timeout){
-		var update = function(clock){
+		this.drawElement = function(hand){
+	    	var currentDeg = hand.value * hand.type;
+	    	if(typeof(hand.element.style.transform)!="undefined"){
+	    		hand.element.style.transform = "rotate("+currentDeg+"deg)";
+	    	}else if(typeof(hand.element.style.webkitTransform)!="undefined"){
+	    		hand.element.style.webkitTransform = "rotate("+currentDeg+"deg)";
+	    	}else if(typeof(hand.element.style.msTransform)!="undefined"){
+	    		hand.element.style.msTransform = "rotate("+currentDeg+"deg)";
+	    	}
+	    	else if(typeof(hand.element.style.MozTransform)!="undefined"){
+	    		hand.element.style.MozTransform = "rotate("+currentDeg+"deg)";
+	    	}else{
+	    		throw  new Error("clock-js requires CSS transformation");
+	    	}
+		 };
+		
+		this.draw = function(clock){
+	    	var secondsHand = clock.secondsHand;
+			var minutesHand = clock.minutesHand;
+			var hoursHand = clock.hoursHand;
+	    	/*segundero*/
+	    	this.drawElement(secondsHand);
+	    	/*minutero*/
+	    	this.drawElement(minutesHand);
+	    	/*horario */
+	    	this.drawElement(hoursHand);
+	    };
+		this.update = function(clock){
 			var secondsHand = clock.secondsHand;
 			var minutesHand = clock.minutesHand;
 			var hoursHand = clock.hoursHand;
@@ -17,61 +44,10 @@ define(function () {
 	        }
 	        minutesHand.value = actDate.getMinutes()+secondsHand.value/60;
 	        hoursHand.value = actDate.getHours()+minutesHand.value/60;
-	        if(window.requestAnimationFrame){
-	        	clockInterval = window.requestAnimationFrame(function(){
-	        		loop(clock);
-	        	});
-	        }else{
-	        	window.setTimeout(function(){
-	        		loop(clock);
-	        	},500);
-	        }
 	    };
-	    var draw = function(clock){
-	    	var secondsHand = clock.secondsHand;
-			var minutesHand = clock.minutesHand;
-			var hoursHand = clock.hoursHand;
-	    	/*segundero*/
-	    	drawElement(secondsHand);
-	    	/*minutero*/
-	    	drawElement(minutesHand);
-	    	/*horario */
-	    	drawElement(hoursHand);
-
-
-	    };
-	    var drawElement = function(hand){
-	    	var currentDeg = hand.value * hand.type;
-	    	if(typeof(hand.element.style.transform)!="undefined"){
-	    		hand.element.style.transform = "rotate("+currentDeg+"deg)";
-	    	}else if(typeof(hand.element.style.webkitTransform)!="undefined"){
-	    		hand.element.style.webkitTransform = "rotate("+currentDeg+"deg)";
-	    	}else if(typeof(hand.element.style.msTransform)!="undefined"){
-	    		hand.element.style.msTransform = "rotate("+currentDeg+"deg)";
-	    	}
-	    	else if(typeof(hand.element.style.MozTransform)!="undefined"){
-	    		hand.element.style.MozTransform = "rotate("+currentDeg+"deg)";
-	    	}
-	    };
-		var loop = function(clock){
-			update(clock);
-			draw(clock);
-		};
-		var initialize = function(clock){
-			if($window.requestAnimationFrame){
-				clock.animation = clock.animation && true;
-				clockInterval = $window.requestAnimationFrame(function(){
-					loop(clock);
-				});
-			}else{
-				clock.animation = clock.animation && false;
-				$timeout(function(){
-					loop(clock);
-				},500);
-			}
-		};
-		return{
-			Initialize:initialize
+		this.loop = function(clock){
+			this.update(clock);
+			this.draw(clock);
 		};
 	};
     return ['$window','$timeout', ClockService];

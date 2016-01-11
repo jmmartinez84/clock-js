@@ -7,7 +7,7 @@ requirejs({
         "linkHandDir":"WorldClock/directives/linkHandDirective",
         "clockHand":"WorldClock/factories/ClockHand",
         "clockFactory":"WorldClock/factories/Clock",
-        "clockServ":"WorldClock/services/ClockService",
+        "clockService":"WorldClock/services/ClockService",
         "app": "WorldClock/app"
     }
 
