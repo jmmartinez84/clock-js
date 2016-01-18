@@ -12,7 +12,7 @@ requirejs({
     }
 
 }, ["app"], function () {
-        var containers = angular.element(".content");
+        var containers = document.getElementsByClassName("content");
         angular.forEach(containers, function (container, index) {
             angular.bootstrap(container, ["worldClock"]);
         });

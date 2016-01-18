@@ -103,12 +103,12 @@ define(['app'], function() {
                             this.called = true;
                             fn();
                         }
-                    }
+                    };
                 });
                 $provide.service('clockService',function(){
                     this.loop = function(){
                         
-                    }
+                    };
                 });
             });
         });
@@ -156,7 +156,7 @@ define(['app'], function() {
                 $provide.service('clockService',function(){
                     this.loop = function(){
                         
-                    }
+                    };
                 });
             });
         });

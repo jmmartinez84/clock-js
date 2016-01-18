@@ -11,16 +11,25 @@ define(function(){
 		Object.defineProperty(Clock.prototype, 'secondsHand',{
 			get: function(){
 				return this.$$secondsHand;		
-			}			
+			},
+			set: function(value){
+				throw  new Error("Unable to set 'secondsHand' property."); 
+			}		
 		});
 		Object.defineProperty(Clock.prototype, 'minutesHand',{
 			get: function(){
 				return this.$$minutesHand;		
+			},
+			set: function(value){
+				throw  new Error("Unable to set 'minutesHand' property."); 
 			}			
 		});
 		Object.defineProperty(Clock.prototype, 'hoursHand',{
 			get: function(){
 				return this.$$hoursHand;		
+			},
+			set: function(value){
+				throw  new Error("Unable to set 'hoursHand' property."); 
 			}			
 		});
 		Object.defineProperty(Clock.prototype, 'animation',{

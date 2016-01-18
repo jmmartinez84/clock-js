@@ -69,7 +69,7 @@ define(function(){
 	 	  return n % 1 === 0;
 		}
 		return ClockHand;
-	}
+	};
 	
 	return [ClockHandFactory];
 });

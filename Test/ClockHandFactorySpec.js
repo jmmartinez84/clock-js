@@ -42,7 +42,7 @@ define(['app'], function() {
             });
             it('should be possible to get "value" property', function(){
                 expect(myClockHand.value).toEqual(myClockHand.$$value);
-            })
+            });
             it('should set a positive numeric  "value" property', function() {
                 myClockHand.value = 50;
                 expect(myClockHand.value).toEqual(50);

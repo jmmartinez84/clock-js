@@ -12,7 +12,7 @@ define(function () {
                     $scope.run(clock);
                 },500);
             }
-        }
+        };
         $scope.initClock = function() {
             var clock = $scope.clock;
             if(clock.secondsHand.element && clock.minutesHand.element && clock.hoursHand.element){

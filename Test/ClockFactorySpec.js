@@ -44,7 +44,9 @@ define(['app'], function() {
                 expect(myClock.secondsHand).toBeDefined();
             });
             it('should not to be able to set "secondsHand" property', function() {
-                myClock.secondsHand = "MyNewHand";
+                expect(function(){ 
+                    myClock.secondsHand = "MyNewHand";
+                }).toThrowError("Unable to set 'secondsHand' property.");
                 expect(myClock.secondsHand).not.toEqual("MyNewHand");
             });
             it('should have a property called "minutesHand"',function(){
@@ -52,7 +54,9 @@ define(['app'], function() {
                 expect(myClock.minutesHand).toEqual(jasmine.any(Object));
             });
             it('should not to be able to set "minutesHand" property', function() {
-                myClock.minutesHand = "MyNewHand";
+                expect(function(){ 
+                    myClock.minutesHand = "MyNewHand";
+                }).toThrowError("Unable to set 'minutesHand' property.");
                 expect(myClock.minutesHand).not.toEqual("MyNewHand");
             });
             it('should have a property called "hoursHand"',function(){
@@ -60,7 +64,9 @@ define(['app'], function() {
                 expect(myClock.hoursHand).toEqual(jasmine.any(Object));
             });
             it('should not to be able to set "hoursHand" property', function() {
-                myClock.hoursHand = "MyNewHand";
+                expect(function(){ 
+                    myClock.hoursHand = "MyNewHand";
+                }).toThrowError("Unable to set 'hoursHand' property.");
                 expect(myClock.hoursHand).not.toEqual("MyNewHand");
             });
             it('should have a property called "animation"',function(){
@@ -72,7 +78,7 @@ define(['app'], function() {
             });
             it('should not be able to set another kind of animation value', function() {
                 myClock.animation = "NoBoolean";
-                expect(myClock.animation).not.toEqual("NoBoolean")
+                expect(myClock.animation).not.toEqual("NoBoolean");
             });
         });
         

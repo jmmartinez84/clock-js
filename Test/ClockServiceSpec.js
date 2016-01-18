@@ -18,7 +18,7 @@ define(['app'], function() {
                         "MozTransform":""
                     }
                 }
-            }
+            };
             ClockService.drawElement(fakeHand);
             expect(fakeHand.element.style.transform).toEqual("rotate(90deg)");
         });
@@ -33,7 +33,7 @@ define(['app'], function() {
                         "MozTransform":""
                     }
                 }
-            }
+            };
             ClockService.drawElement(fakeHand);
             expect(fakeHand.element.style.webkitTransform).toEqual("rotate(90deg)");
         });
@@ -47,7 +47,7 @@ define(['app'], function() {
                         "MozTransform":""
                     }
                 }
-            }
+            };
             ClockService.drawElement(fakeHand);
             expect(fakeHand.element.style.msTransform).toEqual("rotate(90deg)");
         });
@@ -60,7 +60,7 @@ define(['app'], function() {
                         "MozTransform":""
                     }
                 }
-            }
+            };
             ClockService.drawElement(fakeHand);
             expect(fakeHand.element.style.MozTransform).toEqual("rotate(90deg)");
         });
@@ -72,8 +72,10 @@ define(['app'], function() {
                     "style":{
                     }
                 }
-            }
-            expect(function(){ClockService.drawElement(fakeHand)}).toThrowError("clock-js requires CSS transformation");
+            };
+            expect(function(){
+                ClockService.drawElement(fakeHand);
+            }).toThrowError("clock-js requires CSS transformation");
         });
         it('should call to drawElement three times', function() {
             var mySpy = spyOn(ClockService, 'drawElement');
@@ -81,7 +83,7 @@ define(['app'], function() {
                 "secondsHand":"",
                 "minutesHand":"",
                 "hoursHand":""
-            }
+            };
             ClockService.draw(fakeClock);
             expect(mySpy.calls.count()).toEqual(3);
         });
@@ -119,7 +121,7 @@ define(['app'], function() {
             };
             spyOn(window,'Date').and.callFake(function(){
                 return new mockDate();
-            })
+            });
         });
         it('should should update clock values with no animation', function() {
             var fakeClock = {
